@@ -2,10 +2,21 @@ import React, { Component } from 'react'
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 
 class Calc extends Component {
+
+    handleInput(text){
+    	console.log(text)
+        this.setState({
+        	text: text
+        })
+    }
+
     render(){
     	return(
     	  <View style={{ flex: 1, backgroundColor: "red"}}>
-    		<TextInput style={styles.input}/>
+    		<TextInput 
+    		    onChangeText={this.handleInput.bind(this)}
+    		    value={"360"}
+    		    style={styles.input}/>
           </View>
     	)
     }
