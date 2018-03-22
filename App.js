@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View
+  View,
+  SafeAreaView
 } from 'react-native';
 import { Calc } from './src/components/screens'
 
 type Props = {};
 export default class App extends Component{
   render() {
-    return (<View style={styles.container}>
+    return (<SafeAreaView style={styles.container}>
       <Calc />
-    </View>);
+    </SafeAreaView>);
   }
 }
 

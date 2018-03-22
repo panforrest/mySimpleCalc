@@ -3,10 +3,17 @@ import { View, Text, TextInput, StyleSheet } from 'react-native'
 
 class Calc extends Component {
 
+	constructor(){
+		super()
+		this.state = {
+			inputText: ''
+		}
+	}
+
     handleInput(text){
     	console.log(text)
         this.setState({
-        	text: text
+        	inputText: text
         })
     }
 
@@ -15,7 +22,7 @@ class Calc extends Component {
     	  <View style={{ flex: 1, backgroundColor: "red"}}>
     		<TextInput 
     		    onChangeText={this.handleInput.bind(this)}
-    		    value={"360"}
+    		    value={this.state.inputText}
     		    style={styles.input}/>
           </View>
     	)
@@ -25,7 +32,7 @@ class Calc extends Component {
 const styles = StyleSheet.create({
 	input: {
 		backgroundColor: "rgb(41, 41, 41)",
-		height: 150, 
+		height: 100, 
         width: 100 + "%",
         color: "rgb(255, 255, 255)",
         fontSize: 48,
