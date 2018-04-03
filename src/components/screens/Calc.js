@@ -43,9 +43,10 @@ class Calc extends Component {
     		    style={styles.input}
             />
               <View style={{flex:1, flexDirection: "row"}}>
-                <View style={{flex:1, backgroundColor:'blue'}}></View>  
-                <View style={{flex:10, backgroundColor:'green'}}/> 
-                <View style={{flex:10, backgroundColor:'grey'}}/> 
+              { this.validKeys.map((key, i) => {
+                return <View style={{flex:1, borderWidth:1}} />
+                
+              })}
               </View>
           </View>
     	)
