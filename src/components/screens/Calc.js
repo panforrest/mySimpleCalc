@@ -44,7 +44,7 @@ class Calc extends Component {
             />
               <View style={{flex:1, flexDirection: "row"}}>
               { this.validKeys.map((key, i) => {
-                return <View style={{flex:1, borderWidth:1}} />
+                return <View style={styles.button} />
                 
               })}
               </View>
@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
         color: "rgb(255, 255, 255)",
         fontSize: 48,
         textAlign: "right"
-	}
+	},
+    button: {flex:1, borderWidth:1}
 })
 
 export default Calc
