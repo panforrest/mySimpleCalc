@@ -42,10 +42,11 @@ class Calc extends Component {
     		    value={this.state.inputText}
     		    style={styles.input}
             />
-            
-            <View style={{flex:1, backgroundColor:'blue'}}></View>  
-            <View style={{flex:10, backgroundColor:'green'}}/> 
-             
+              <View style={{flex:1, flexDirection: "row"}}>
+                <View style={{flex:1, backgroundColor:'blue'}}></View>  
+                <View style={{flex:10, backgroundColor:'green'}}/> 
+                <View style={{flex:10, backgroundColor:'grey'}}/> 
+              </View>
           </View>
     	)
     }
