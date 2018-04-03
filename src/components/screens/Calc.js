@@ -8,6 +8,23 @@ class Calc extends Component {
 		this.state = {
 			inputText: ''
 		}
+        this.validKeys=[
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "+",
+          "-",
+          "/",
+          "*",
+          "="
+        ];
 	}
 
     handleInput(text){
@@ -23,7 +40,12 @@ class Calc extends Component {
     		<TextInput 
     		    onChangeText={this.handleInput.bind(this)}
     		    value={this.state.inputText}
-    		    style={styles.input}/>
+    		    style={styles.input}
+            />
+            
+            <View style={{flex:1, backgroundColor:'blue'}}></View>  
+            <View style={{flex:10, backgroundColor:'green'}}/> 
+             
           </View>
     	)
     }
