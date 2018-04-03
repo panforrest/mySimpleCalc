@@ -50,8 +50,12 @@ class Calc extends Component {
 
                 return (
                   <View style={styles.row}>
-                    <View style={styles.button} />
-                    <View style={styles.button} />
+                    <View style={styles.button}>
+                      <Text style={styles.btnText}>{this.validKeys[i]}</Text>
+                    </View>
+                    <View style={styles.button}>
+                      <Text style={styles.btnText}>{this.validKeys[i+1]}</Text>
+                    </View>
                   </View>
                 )                
               })}
@@ -71,7 +75,10 @@ const styles = StyleSheet.create({
         textAlign: "right"
 	},
     button: {flex:1, borderWidth:1},
-    row: {flex:1, flexDirection: "row"}
+    row: {flex:1, flexDirection: "row"},
+    btnText: {
+        fontSize: 36
+    }
 })
 
 export default Calc
