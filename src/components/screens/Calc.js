@@ -42,10 +42,18 @@ class Calc extends Component {
     		    value={this.state.inputText}
     		    style={styles.input}
             />
-              <View style={{flex:1, flexDirection: "row"}}>
+              <View style={{flex:1, flexDirection: "column"}}>
               { this.validKeys.map((key, i) => {
-                return <View style={styles.button} />
-                
+                if (i % 2 == 0){
+                    return
+                }
+
+                return (
+                  <View style={styles.row}>
+                    <View style={styles.button} />
+                    <View style={styles.button} />
+                  </View>
+                )                
               })}
               </View>
           </View>
@@ -62,7 +70,8 @@ const styles = StyleSheet.create({
         fontSize: 48,
         textAlign: "right"
 	},
-    button: {flex:1, borderWidth:1}
+    button: {flex:1, borderWidth:1},
+    row: {flex:1, flexDirection: "row"}
 })
 
 export default Calc
