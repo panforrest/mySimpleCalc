@@ -28,10 +28,16 @@ class Calc extends Component {
 	}
 
     handleInput(text){
-    	  // console.log(text)
-        // alert(text);
+        //"a, ab, abc"
         this.setState({
-        	inputText: this.state.inputText+text
+        	inputText: text
+        })
+    }
+
+    handleButtonInput(text){
+        //'a', 'b', 'c'
+        this.setState({
+          inputText: this.state.inputText+text
         })
     }
 
@@ -51,12 +57,12 @@ class Calc extends Component {
 
                 return (
                   <View style={styles.row}>
-                    <TouchableOpacity onPress={this.handleInput.bind(this, this.validKeys[i])}
+                    <TouchableOpacity onPress={this.handleButtonInput.bind(this, this.validKeys[i])}
                       style={styles.button}>
                       
                       <Text style={styles.btnText}>{this.validKeys[i]}</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={this.handleInput.bind(this, this.validKeys[i+1])}
+                    <TouchableOpacity onPress={this.handleButtonInput.bind(this, this.validKeys[i+1])}
                       style={styles.button}>
                       <Text style={styles.btnText}>{this.validKeys[i+1]}</Text>
                     </TouchableOpacity>
