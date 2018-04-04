@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput, StyleSheet } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 
 class Calc extends Component {
 
@@ -50,12 +50,12 @@ class Calc extends Component {
 
                 return (
                   <View style={styles.row}>
-                    <View style={styles.button}>
+                    <TouchableOpacity style={styles.button}>
                       <Text style={styles.btnText}>{this.validKeys[i]}</Text>
-                    </View>
-                    <View style={styles.button}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button}>
                       <Text style={styles.btnText}>{this.validKeys[i+1]}</Text>
-                    </View>
+                    </TouchableOpacity>
                   </View>
                 )                
               })}
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     button: {
         flex:1, 
         borderWidth:1, 
+        backgroundColor: "rgb(224,224,224)",
         justifyContent: "center", 
         alignItems: "center"
     },
