@@ -44,7 +44,7 @@ class Calc extends Component {
             />
               <View style={{flex:1, flexDirection: "column"}}>
               { this.validKeys.map((key, i) => {
-                if (i % 2 == 0){
+                if (i % 2 != 0){
                     return
                 }
 
@@ -74,8 +74,16 @@ const styles = StyleSheet.create({
         fontSize: 48,
         textAlign: "right"
 	},
-    button: {flex:1, borderWidth:1},
-    row: {flex:1, flexDirection: "row"},
+    button: {
+        flex:1, 
+        borderWidth:1, 
+        justifyContent: "center", 
+        alignItems: "center"
+    },
+    row: {
+        flex:1, 
+        flexDirection: "row"
+    },
     btnText: {
         fontSize: 36
     }
