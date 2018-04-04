@@ -28,7 +28,8 @@ class Calc extends Component {
 	}
 
     handleInput(text){
-    	console.log(text)
+    	  console.log(text)
+        alert(text);
         this.setState({
         	inputText: text
         })
@@ -50,7 +51,9 @@ class Calc extends Component {
 
                 return (
                   <View style={styles.row}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity onPress={this.handleInput.bind(this, '0')}
+                      style={styles.button}>
+                      
                       <Text style={styles.btnText}>{this.validKeys[i]}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button}>
