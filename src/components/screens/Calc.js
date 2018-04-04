@@ -56,18 +56,49 @@ class Calc extends Component {
     }
 
     calculate(){
+        let result = null
         switch(this.state.pendingOperation){
           case "+":
-            console.log(Number(this.state.firstOperand)+Number(this.state.inputText))
+            result = Number(this.state.firstOperand)+Number(this.state.inputText)
+            result = result.toString()   
+            this.setState({
+              inputText: result,
+              pendingOperation: null,
+              firstOperand: ""
+            })
             return
           case "-":
-            return
+            result = Number(this.state.firstOperand)-Number(this.state.inputText)
+            result = result.toString()   
+            this.setState({
+              inputText: result,
+              pendingOperation: null,
+              firstOperand: ""
+            })
+            return            
           case "*":
-            return
+            result = Number(this.state.firstOperand)*Number(this.state.inputText)
+            result = result.toString()   
+            this.setState({
+              inputText: result,
+              pendingOperation: null,
+              firstOperand: ""
+            })
+            return            
           case "/":
-
+            result = Number(this.state.firstOperand)/Number(this.state.inputText)
+            result = result.toString()   
+            this.setState({
+              inputText: result,
+              pendingOperation: null,
+              firstOperand: ""
+            })
+            return
           default:
-        }
+            return
+        } 
+
+        
     }
 
     render(){
