@@ -28,10 +28,10 @@ class Calc extends Component {
 	}
 
     handleInput(text){
-    	  console.log(text)
-        alert(text);
+    	  // console.log(text)
+        // alert(text);
         this.setState({
-        	inputText: text
+        	inputText: this.state.inputText+text
         })
     }
 
