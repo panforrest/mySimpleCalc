@@ -45,11 +45,21 @@ class Calc extends Component {
           console.log(JSON.stringify(this.state))
           return;
         }
+        else if (text=="="){
+          this.calculate()
+          return
+        }
         this.setState({
           inputText: this.state.inputText+text          
         })
         console.log(JSON.stringify(this.state))
     }
+
+    calculate(){
+      
+    }
+
+
 
     render(){
     	return(
