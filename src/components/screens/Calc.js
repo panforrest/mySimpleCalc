@@ -1,30 +1,35 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import { CalcButton } from '../presentation'
 
 class Calc extends Component {
 
 	constructor(){
 		super()
-		this.state = {
-			inputText: ''
+		this.initial = {
+			inputText: '',
+      pendingOperation: null,
+      firstOperand: ""
 		}
-        this.validKeys=[
-          "0",
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7",
-          "8",
-          "9",
-          "+",
-          "-",
-          "/",
-          "*",
-          "="
-        ];
+    this.state = this.initial;
+    this.validKeys=[
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "+",
+      "-",
+      "/",
+      "*",
+      "=",
+      "C"
+    ];
 	}
 
     handleInput(text){
@@ -48,11 +53,13 @@ class Calc extends Component {
         else if (text === "="){
           this.calculate()
           return
+        } else if (text === "C"){
+          this.setState(this.initial)
+        } else {
+          this.setState({
+            inputText: this.state.inputText+text          
+          })
         }
-        this.setState({
-          inputText: this.state.inputText+text          
-        })
-        // console.log(JSON.stringify(this.state))
     }
 
     calculate(){
@@ -117,16 +124,12 @@ class Calc extends Component {
 
                 return (
                   <View style={styles.row}>
-                    <TouchableOpacity 
-                      onPress={this.handleButtonInput.bind(this, this.validKeys[i])}
-                      style={styles.button}>
-                      
-                      <Text style={styles.btnText}>{this.validKeys[i]}</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={this.handleButtonInput.bind(this, this.validKeys[i+1])}
-                      style={styles.button}>
-                      <Text style={styles.btnText}>{this.validKeys[i+1]}</Text>
-                    </TouchableOpacity>
+                    <CalcButton 
+                      handleButtonInput={this.handleButtonInput.bind(this)}
+                      value={this.validKeys[i]}/>
+                    <CalcButton 
+                      handleButtonInput={this.handleButtonInput.bind(this)}
+                      value={this.validKeys[i+1]}/>
                   </View>
                 )                
               })}
@@ -145,20 +148,12 @@ const styles = StyleSheet.create({
         fontSize: 48,
         textAlign: "right"
 	},
-    button: {
-        flex:1, 
-        borderWidth:1, 
-        backgroundColor: "rgb(224,224,224)",
-        justifyContent: "center", 
-        alignItems: "center"
-    },
+
     row: {
         flex:1, 
         flexDirection: "row"
     },
-    btnText: {
-        fontSize: 36
-    }
+
 })
 
 export default Calc
