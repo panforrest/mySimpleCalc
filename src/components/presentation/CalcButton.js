@@ -10,7 +10,7 @@ class CalcButton extends Component {
 	render(){
 		return(
 			<TouchableOpacity 
-              // onPress={this.handleButtonInput.bind(this, this.validKeys[i])}
+              onPress={this.props.handleButtonInput.bind(this, this.props.value)}
               style={styles.button}>
               
               <Text style={styles.btnText}>{this.props.value}</Text>
