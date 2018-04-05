@@ -11,7 +11,6 @@ class Calc extends Component {
       pendingOperation: null,
       firstOperand: ""
 		}
-    this.state = this.initial;
     this.validKeys=[
       "0",
       "1",
@@ -30,6 +29,7 @@ class Calc extends Component {
       "=",
       "C"
     ];
+    this.state = this.initial;
 	}
 
     handleInput(text){
