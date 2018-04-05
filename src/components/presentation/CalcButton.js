@@ -13,7 +13,7 @@ class CalcButton extends Component {
               // onPress={this.handleButtonInput.bind(this, this.validKeys[i])}
               style={styles.button}>
               
-              <Text style={styles.btnText}>{this.props.val}</Text>
+              <Text style={styles.btnText}>{this.props.value}</Text>
             </TouchableOpacity>
 		)
 	}
